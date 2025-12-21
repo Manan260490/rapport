@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs") %>
+<body>
+<%- include("partials/navbar_sidebar.ejs") %>
+<style>
+  .form-group{
+    display: flex;
+    flex-direction: column;
+  }
+  .form-control1 {
+      height: 500px !important;
+  }
+  .select2-container .select2-results__options {
+    height: 500px !important;  /* change height as needed */
+}
+  </style>
+  
+<div class="container mt-5" style="min-height: 800px;">
+  <h2>Add New Menu</h2>
+  <form id="addMenuForm" method="POST" cla>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" name="title" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label>Link</label>
+      <input type="text" name="link" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label>Parent Menu (optional)</label>
+      <select name="parent" id="parentMenuSelect" class="form-control1">
+        <option value="">Top Level</option>
+        <% function renderOptions(menu, prefix = "") { %>
+          <option value="<%= menu._id %>"><%= prefix + menu.title %></option>
+          <% if (menu.children && menu.children.length) { %>
+            <% menu.children.forEach(child => { %>
+              <%= renderOptions(child, prefix + "-- ") %>
+            <% }) %>
+          <% } %>
+        <% } %>
+        <% rootMenus.forEach(menu => { %>
+          <%= renderOptions(menu) %>
+        <% }) %>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Menu</button>
+  </form>
+
+  <div id="successMessage" class="alert alert-success mt-3" style="display:none;">
+    Menu added successfully!
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#parentMenuSelect').select2({
+      placeholder: "Select parent menu",
+      allowClear: true
+    });
+
+    $("#addMenuForm").submit(function (e) {
+      e.preventDefault();
+      const formData = $(this).serialize();
+      $.post("/admin/addMenu", formData, function () {
+        $("#successMessage").fadeIn().delay(2000).fadeOut();
+        $("#addMenuForm")[0].reset();
+        $('#parentMenuSelect').val(null).trigger('change');
+      }).fail(function () {
+        alert("Error adding menu.");
+      });
+    });
+  });
+</script>
+
+<%- include("partials/footerJs.ejs") %>
+</body>
+</html>

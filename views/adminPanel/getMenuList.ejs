@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head.ejs") %>
+  <body>
+    <%- include("partials/navbar_sidebar.ejs") %>
+
+    <style>
+      .submenu-level-0 td { padding-left: 0px; }
+      .submenu-level-1 td { padding-left: 20px; }
+      .submenu-level-2 td { padding-left: 40px; }
+      .submenu-level-3 td { padding-left: 60px; }
+      .submenu-level-4 td { padding-left: 80px; }
+      .submenu-level-5 td { padding-left: 100px; }
+      .edit-parent-select {
+    /* Change width as needed */
+  max-height: 400px; /* Increase dropdown height */
+  overflow-y: auto;  /* Make scrollable if content exceeds height */
+}
+      .disabled-row { opacity: 0.5; }
+      .table-striped tbody tr:nth-child(odd) { background-color: #f9f9f9; }
+      .table-bordered td, .table-bordered th { border: 1px solid #dee2e6 !important; }
+    </style>
+
+    <div class="container mt-5">
+      <h2 class="mb-4">Menu List</h2>
+
+      <% if (passedMessage) { %>
+        <div class="alert alert-success"><%= passedMessage %></div>
+      <% } %>
+
+      <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Title</th>
+            <th>Link</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="menuTableBody"></tbody>
+      </table>
+    </div>
+
+    <script>
+      // Load menus passed from backend
+      document.addEventListener("DOMContentLoaded", function() {
+        const menus = <%- JSON.stringify(menus || []) %>;
+window.allMenus = menus;
+
+        const tbody = document.getElementById('menuTableBody');
+        tbody.innerHTML = renderMenuRows(menus, 0);
+      });
+      function flattenMenus(menus, level = 0) {
+  let list = [];
+  menus.forEach(m => {
+    list.push({
+      _id: m._id,
+      title: `${'— '.repeat(level)}${m.title}`
+    });
+    if (m.children?.length > 0) {
+      list = list.concat(flattenMenus(m.children, level + 1));
+    }
+  });
+  return list;
+}
+
+      // Recursive renderer for any depth level
+      function renderMenuRows(menus, level) {
+        let html = '';
+        menus.forEach(menu => {
+          const levelClass = `submenu-level-${level}`;
+          html += `
+            <tr class="${levelClass} ${menu.isDisabled ? 'disabled-row' : ''}">
+              <td>${'— '.repeat(level)}${menu.title}</td>
+              <td>${menu.link || ''}</td>
+              <td>
+                <span class="badge ${menu.isDisabled ? 'badge-secondary' : 'badge-success'}">
+                  ${menu.isDisabled ? 'Disabled' : 'Enabled'}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-warning" onclick="toggleEditForm('${menu._id}')">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteMenu('${menu._id}')">Delete</button>
+                <button class="btn btn-sm btn-secondary" onclick="toggleMenu('${menu._id}')">
+                  ${menu.isDisabled ? 'Enable' : 'Disable'}
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="4">
+                <div id="edit-form-${menu._id}" style="display:none;">
+                  <form onsubmit="submitEdit(event, '${menu._id}')">
+                    <div class="form-row">
+                      <div class="col">
+                        <input type="text" name="title" class="form-control" value="${menu.title}" required />
+                      </div>
+                      <div class="col">
+                        <input type="text" name="link" class="form-control" value="${menu.link || ''}" required />
+                      </div>
+                      <div class="col" >
+                        <select name="parent" class="form-control edit-parent-select" style="width: 100%;">
+  <option value="">Top Level</option>
+  ${flattenMenus(window.allMenus)
+    .map(m => `<option value="${m._id}" ${menu.parent === m._id ? 'selected' : ''}>${m.title}</option>`)
+    .join('')}
+</select>
+
+                      </div>
+                      <div class="col">
+                        <button type="submit" class="btn btn-success btn-sm">Save</button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="toggleEditForm('${menu._id}')">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          `;
+
+          // Recursive render for children
+          if (menu.children && menu.children.length > 0) {
+            html += renderMenuRows(menu.children, level + 1);
+          }
+        });
+        return html;
+      }
+
+      function toggleEditForm(id) {
+        const formDiv = document.getElementById("edit-form-" + id);
+        formDiv.style.display = formDiv.style.display === "none" ? "block" : "none";
+      }
+
+      function submitEdit(event, id) {
+        event.preventDefault();
+        const form = event.target;
+        const data = {
+          title: form.title.value,
+          link: form.link.value,
+          parent: form.parent.value || null,
+        };
+
+        fetch(`/admin/editMenu/${id}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+        .then(async res => {
+          const text = await res.text();
+          if (!res.ok) throw new Error(text || "Failed");
+          alert("Menu updated successfully");
+          location.reload();
+        })
+        .catch(err => alert("Update failed: " + err.message));
+      }
+
+      function deleteMenu(id) {
+        if (!confirm("Are you sure you want to delete this menu?")) return;
+        fetch(`/admin/deleteMenu/${id}`, { method: "POST" })
+          .then(res => res.ok ? res.text() : Promise.reject("Failed"))
+          .then(() => {
+            alert("Menu deleted successfully");
+            location.reload();
+          })
+          .catch(err => alert(err));
+      }
+
+      function toggleMenu(id) {
+        fetch(`/admin/toggleMenu/${id}`, { method: "POST" })
+          .then(res => res.ok ? res.text() : Promise.reject("Failed"))
+          .then(() => {
+            alert("Menu status toggled");
+            location.reload();
+          })
+          .catch(err => alert(err));
+      }
+    </script>
+
+    <%- include("partials/footerJs.ejs") %>
+  </body>
+</html>

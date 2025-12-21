@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include("partials/head.ejs") %>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<style>
+  .data-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 0 80px;
+  }
+
+  @media (max-width:992px) {
+    .data-container {
+
+      margin: 80px 0 0 0;
+    }
+  }
+
+  .span-info {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.524);
+  }
+
+
+  h4 {
+    color: black;
+
+  }
+
+  .table tr {
+    padding: 0;
+    margin: 0;
+  }
+
+  td {
+    color: black;
+  }
+
+  h2 {
+    color: black;
+  }
+  .btn-primary { 
+    margin: 0;
+  }
+  .form-style {
+    display: flex; justify-content: flex-start; align-items: center; flex-direction: row; gap: 20px;
+  }
+</style>
+
+<body>
+  <!-- Including navbar and sidebar from the partials -->
+  <%- include("partials/navbar_sidebar.ejs") %>
+
+  <div class="row data-container">
+    <% if(passedMessage){ %>
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <%= passedMessage %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <% } %>
+    <table class="table table-striped table-sm">
+
+      <tr>
+        <td><span class="span-info">Name Of Service:</span></td>
+        <td><%= response.nameOfService %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Full Name:</span></td>
+        <td><%= response.name %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Company Name:</span></td>
+        <td><%= response.company_name %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Email:</span></td>
+        <td><%= response.email %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Contact Number:</span></td>
+        <td><%= response.contact_number %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Primary Business:</span></td>
+        <td><%= response.primaryBusiness %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Employee Count:</span></td>
+        <td><%= response.employeeCount %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Billing Address:</span></td>
+        <td><%= response.billingAddress %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">City:</span></td>
+        <td><%= response.city %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">State:</span></td>
+        <td><%= response.state %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Urgency:</span></td>
+        <td><%= response.urgency %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Reaching Time:</span></td>
+        <td><%= response.reaching_time %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Payment Status:</span></td>
+        <td><%= response.paymentStatus %></td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Update Payment Status:</span></td>
+        <td>
+          <form class="form-style" action="/admin/paymentStatusUpdate" method="post">
+
+            <select style="width: 100px;" name="paymentStatus" id="paymentStatus">
+              <option value="pending">pending</option>
+              <option value="paid">paid</option>
+            </select>
+            <Button value="<%= response.id %>" class="btn btn-primary btn-sm" name="submitButton">Submit</Button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td><span class="span-info">Current Status:</span></td>
+        <td><%= response.statusOfWork %></td>
+      </tr>
+
+      
+      <tr>
+        <td><span class="span-info">Update Status:</span></td>
+        <td>
+          <form class="form-style" action="/admin/statusUpdate" method="post">
+            <input class="form-control" style="width: 300px" placeholder="Enter the status" type="text" name="statusOfWork" id="">
+            <Button value="<%= response.id %>" class="btn btn-primary btn-sm" name="submitButton">Submit</Button>
+          </form>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+  <%- include("partials/footerJs.ejs") %>
+
+</body>
+
+</html>

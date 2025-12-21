@@ -1,0 +1,55 @@
+<tr class="<%= menu.isDisabled ? 'disabled-row' : '' %> submenu-level-<%= level %>">
+    <td><%= '-- '.repeat(level) + menu.title %></td>
+    <td><%= menu.link %></td>
+    <td>
+      <span class="badge badge-<%= menu.isDisabled ? 'secondary' : 'success' %>">
+        <%= menu.isDisabled ? 'Disabled' : 'Enabled' %>
+      </span>
+    </td>
+    <td>
+      <button class="btn btn-sm btn-warning" onclick="toggleEditForm('<%= menu._id %>')">Edit</button>
+      <button class="btn btn-sm btn-danger" onclick="deleteMenu('<%= menu._id %>')">Delete</button>
+      <button class="btn btn-sm btn-secondary" onclick="toggleMenu('<%= menu._id %>')">
+        <%= menu.isDisabled ? 'Enable' : 'Disable' %>
+      </button>
+    </td>
+  </tr>
+  
+  <!-- Inline Edit Form -->
+  <tr>
+    <td colspan="4">
+      <div id="edit-form-<%= menu._id %>" style="display:none;">
+        <form onsubmit="submitEdit(event, '<%= menu._id %>')">
+          <div class="form-row">
+            <div class="col">
+              <input type="text" name="title" class="form-control" value="<%= menu.title %>" required />
+            </div>
+            <div class="col">
+              <input type="text" name="link" class="form-control" value="<%= menu.link %>" required />
+            </div>
+            <div class="col">
+              <select name="parent" class="form-control">
+                <option value="">Top Level</option>
+                <% menus.forEach(m => { if (m._id.toString() !== menu._id.toString()) { %>
+                  <option value="<%= m._id %>" <%= menu.parent && menu.parent.toString() === m._id.toString() ? 'selected' : '' %>>
+                    <%= m.title %>
+                  </option>
+                <% } }) %>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-success btn-sm">Save</button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="toggleEditForm('<%= menu._id %>')">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </td>
+  </tr>
+  
+  <% if (menu.children && menu.children.length) { %>
+    <% menu.children.forEach(child => { %>
+      <%- include('partials/menu_row', { menu: child, level: level + 1, menus: menus }) %>
+    <% }) %>
+  <% } %>
+  

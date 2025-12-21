@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <Title> <%= typeof titleMeta !=="undefined" ? titleMeta: "Rapport HR solution" %></title>    <meta property="og:image" content="/images/favicon.png" />
+     <%- include("partials/analyticsCodes") %>
+        
+    <Meta Name = "description" content = "<%= typeof descriptionMeta !=="undefined" ? descriptionMeta: "Rapport HR solution" %>">
+    <Meta Name="keywords" content="ESI Consultant, PF Consultant, epf esi registration, ESI PF Consultant Delhi, epf consultant near me, apply gst number online, apply for gst number, epf and esi registration, company gst registration, applicability of pf, apply for pf online, balance check pf, balance epf, balance in pf account, Payroll Outsource Company Delhi,apply epf online, ESI PF Consultant Noida, iec code registration, ESI PF Consultant Gurgaon,Company Registration Online, PF Return Filing, PF New Scheme, Government Tender "/>
+    <meta name="google-site-verification" content="rBMaKbxi_qtywiASAsyRaFfnmC6gBA2S7bB7if9ysYM" />
+    <link rel="canonical" href="https://rapporthr.in/aboutUs">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186349567-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-186349567-1');
+</script>    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/flaticon.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/royal-preload.css" />
+    <style>
+        .demo {
+            background: linear-gradient(to right, #4e42b9, #e98223)
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            outline: none;
+        }
+
+        #accordion .panel {
+            border: none;
+            border-radius: 5px;
+            box-shadow: none;
+            margin-bottom: 10px;
+            background: transparent;
+        }
+
+        #accordion .panel-heading {
+            padding: 0;
+            border: none;
+            border-radius: 5px;
+            background: transparent;
+            position: relative;
+        }
+
+        #accordion .panel-title a {
+            display: block;
+            padding: 20px 30px;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.4);
+            font-size: 17px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        #accordion .panel-title a.collapsed {
+            border: none;
+        }
+
+        #accordion .panel-title a:before,
+        #accordion .panel-title a.collapsed:before {
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            width: 30px;
+            height: 30px;
+            line-height: 27px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 900;
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            transform: rotate(180deg);
+            transition: all .4s cubic-bezier(0.080, 1.090, 0.320, 1.275);
+        }
+
+        #accordion .panel-title a.collapsed:before {
+            color: rgba(255, 255, 255, 0.5);
+            transform: rotate(0deg);
+        }
+
+        #accordion .panel-body {
+            padding: 20px 30px;
+            background: rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+            color: #fff;
+            line-height: 28px;
+            letter-spacing: 1px;
+            border-top: none;
+            border-radius: 5px;
+        }
+
+        .about-service .container h1 {
+            color: #43baff;
+        }
+
+        .about-service .container h2 {
+            color: #43baff;
+        }
+
+        .about-service .container h3 {
+            color: #43baff;
+        }
+
+        .documents-required {
+            background-color: whitesmoke;
+        }
+
+        .ot-heading {
+            text-align: center;
+        }
+
+        .eligibility {
+            background-color: whitesmoke;
+        }
+
+
+        .seperator-hr {
+            height: 10px;
+            position: relative;
+            width: 70%;
+            background: radial-gradient(ellipse farthest-side at top center, rgba(73, 71, 71, 0.39), transparent)
+        }
+
+        .seperator-hr:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(left, transparent, rgba(121, 21, 21, 0.068), rgba(175, 50, 50, 0.02), transparent)
+        }
+
+
+
+        .procedure-icon {
+            width: 20%;
+        }
+
+        .callback-input {
+            margin: 10px 10px;
+        }
+
+        .ot-pricing-table {
+            height: 100%;
+        }
+
+        .pricing-button {
+            position: absolute;
+            bottom: 10px;
+        }
+
+
+        .title-table {
+            font-size: 1.1rem !important;
+        }
+
+        .inner-table h2 {
+            font-size: 2.3rem !important;
+        }
+
+        .inner h6 {
+            font-weight: 500;
+        }
+
+        .top-image img {
+            width: 150px;
+        }
+
+        .top-image {
+            text-align: center;
+        }
+
+        .service-box .content-box {
+            padding: 20px 0 0;
+            text-align: center;
+        }
+
+        .service-box {
+            border: 0;
+            padding: 20px 0 0;
+            height: 100%;
+        }
+
+
+        .details ul li {
+            line-height: 20px;
+            display: flex;
+        }
+    </style>
+    <style>
+        .reduce-width{
+            width: 550px;
+        }
+        .align-self-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="royal_preloader">
+    <div id="page" class="site">
+        <%- include("partials/navbar",{service:"active"})  %>
+        <div id="content" class="site-content">
+            <div class="page-header flex-middle">
+                <div class="container">
+                    <div class="inner">
+                        <h1 class="page-title"> <%= name %> </h1>
+                        <h6 style="color:white"> <%= descriptionOfService %> </h6>
+                    </div>
+                </div>
+            </div>
+            <% if(pricingCards.rapportStart[0].replace(/\s/g,'')!== ""){ %>
+            <section class="service-web-pricing">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="ot-heading">
+                                <span> choose your plan</span>
+                                <h2 class="main-heading">Flexible Pricing Plans</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <div class="ot-pricing-table">
+                                <div class="icon-main"><span class="flaticon-tablet"></span></div>
+                                <div class="inner-table">
+                                    <h4 class="title-table">Rapport START</h4>
+                                    <h2>Rs. <%=pricingCards.rapportStart[0]  %> </h2>
+                                    <span>Rs.<%=pricingCards.rapportStart[0]  %> + GST@18% </span>
+                                    <div class="details ">
+                                        <ul>
+                                            <% for(let i=1; i<pricingCards.rapportStart.length; i++){%>
+                                            <li class="active"><%= pricingCards.rapportStart[i] %> </li>
+                                            <% } %>
+                                        </ul>
+                                    </div>
+                                    <a href="/orderForm/<%=_id%>/rapportStart" class="octf-btn pricing-button">Choose
+                                        Plan</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <div class="ot-pricing-table">
+                                <div class="icon-main"><span class="flaticon-report"></span></div>
+                                <div class="inner-table">
+                                    <h4 class="title-table">Rapport SELECT</h4>
+                                    <h2>Rs. <%= pricingCards.rapportSelect[0] %> </h2>
+                                    <span>Rs.<%= pricingCards.rapportSelect[0] %> + GST@18%</span>
+                                    <div class="details ">
+                                        <ul>
+                                            <% for(let i=1; i<pricingCards.rapportSelect.length; i++){%>
+                                            <li class="active"><%= pricingCards.rapportSelect[i] %> </li>
+                                            <% } %>
+                                        </ul>
+                                    </div>
+                                    <a href="/orderForm/<%=_id%>/rapportSelect" class="octf-btn pricing-button">Choose
+                                        Plan</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="ot-pricing-table">
+                                <div class="icon-main"><span class="flaticon-ui"></span></div>
+                                <div class="inner-table">
+                                    <h4 class="title-table">Rapport SUPER</h4>
+                                    <h2>Rs. <%= pricingCards.rapportSuper[0] %> </h2>
+                                    <span>Rs.<%= pricingCards.rapportSuper[0] %>+ GST@18%
+                                    </span>
+                                    <div class="details ">
+                                        <ul>
+                                            <% for(let i=1; i<pricingCards.rapportSuper.length; i++){%>
+
+                                            <li class="active"><%= pricingCards.rapportSuper[i] %> </li>
+
+                                            <% } %>
+
+                                        </ul>
+                                    </div>
+                                    <a href="/orderForm/<%=_id%>/rapportSuper" class="octf-btn pricing-button">Choose
+                                        Plan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% }else{ %>
+            <section class="service-web-pricing">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="ot-heading">
+                                <span> Contact Us</span>
+                               
+                            </div>
+                        </div>
+                    </div>
+                  
+        
+                        <div class=" align-self-center">
+                                <div class="about-right reduce-width">
+
+                                    <form action="/customerMessage" method="post" class="wpcf7">
+                                        <div class="main-form">
+
+                                            <h2>GET IN TOUCH</h2>
+                                            <p class="font14">Required fields are
+                                                marked *
+                                            </p>
+                                            <p>
+                                                <input required type="text" id="question_name" name="name"
+                                                    placeholder="Enter the name *">
+                                            </p>
+                                            <p>
+                                                <input type="text" id="question_comapny" name="comapnyName"
+                                                    placeholder="Company Name">
+                                            </p>
+                                            <p>
+                                                <input required id="question_email" type="email" name="email"
+                                                    placeholder="email *">
+                                            </p>
+                                            <p>
+                                                <input type="number" id="question_mobile" name="customerNumber" required
+                                                    placeholder="Mobile *">
+                                            </p>
+                                            <p>
+                                                <input required id="question_enquiry" type="text" name="enquiryFor"
+                                                    placeholder="Enquiry For? *">
+                                            </p>
+                                            <button id="question-submit" class="octf-btn octf-btn-light">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
+           
+                 
+                </div>
+            </section>
+               
+                <% } %> 
+            <% if(aboutService) {%>
+            <section class=" about-service pbt-120">
+
+                <div class="container">
+                    <%- aboutService %>
+                </div>
+            </section>
+            <% } %>
+            <% if(procedure.procedureName != ""){ %>
+            <section class="service">
+                <div class="ot-heading">
+                    <span>Procedure</span>
+                    <h2 class="main-heading">Procedure for <%= name %> </h2>
+                    <hr class="seperator-hr">
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <% for(let j=0; j<procedure.procedureName.length; j++){ %>
+                            
+                        <div class="col-lg col-md mb-4 mb-lg-0">
+                            <div class="service-box s-box">
+                                <span class="big-number">0<%= j+1 %> </span>
+                                <% if(typeof filename[j.toString()] !== "undefined"){ %>
+                                    <% if(filename[j.toString()] !== false){ %> 
+                                        <div class="top-image"><img src="/uploads/<%=filename[j.toString()].originalname.replace(/\s/g, "") %>" alt="<%= typeof procedure.procedureImageAltTag !== "undefined" && procedure.procedureImageAltTag[j] %>"> </div>
+                                    <% } %> 
+                                <% } %>  
+                                <div class="content-box">
+                                    <h5><%= procedure.procedureName[j] %> </h5>
+                                    <p><%= procedure.procedureDescription[j] %></p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+
+            <% if(documentsRequired){ %>
+                <% if(documentsRequired.replace(/\s/g,'') !== ""){ %> 
+                    <section class="documents-required">
+                        <div class="container">
+                            <div class="service-process">
+                                <div class="ot-heading">
+                                    <span> Documents required</span>
+                                    <h3 class="main-heading">Documents Required </h3>
+                                    <hr class="seperator-hr">
+                                </div>
+                                <div id="requirements-list" class="requirements-list">
+                                    <%- documentsRequired %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <% } %> 
+            <% } %>
+            <% if(advantages){ %>
+                <% if(advantages.replace(/\s/g,'') !== ""){ %> 
+                    <section class="advantages">
+                        <div class="container">
+                            <div class="service-process">
+                                <div class="ot-heading">
+                                    <span>Advatages</span>
+                                    <h3 class="main-heading">Advantages of <%= name %> </h3>
+                                    <hr class="seperator-hr">
+                                </div>
+                                <div class="requirements-list">
+                                    <%- advantages %>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <% } %> 
+            
+            <% } %>
+            <% if(eligibility.replace(/\s/g,'')!== ""){ %>
+              
+            <section class="eligibility">
+
+                <div class="container">
+                    <div class="service-process">
+                        <div class="ot-heading">
+                            <span>Eligibility</span>
+                            <h3 class="main-heading">Eligibility of <%= name %> </h3>
+                            <hr class="seperator-hr">
+                        </div>
+                        <div class="requirements-list">
+
+                            <p><%- eligibility %> </p>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+            <% if(steps.stepsName != ""){ %>
+            <section class="steps">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 ">
+                            <div class="ot-heading">
+                                <span> Steps</span>
+                                <h3 class="main-heading">Steps for <br> <%= name %> </h3>
+                                <hr class="seperator-hr">
+                            </div>
+                            <div class="space-25"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ot-accordions">
+
+                                <% for(let m=0; m<steps.stepsName.length; m++){ %>
+                                <div class="acc-item">
+                                    <span class="acc-toggle">Step <%= m+1 %> : <%= steps.stepsName[m] %>
+                                        <i class="down flaticon-download-arrow"></i><i class="up flaticon-up-arrow"></i>
+                                    </span>
+                                    <div class="acc-content">
+                                        <p><%= steps.stepsDescription[m] %> </p>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <% } %>
+            <% if(faq.faqQuestion != ""){ %>
+            <section class="faq">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 ">
+                            <div class="ot-heading">
+                                <span> FAQ</span>
+                                <h3 class="main-heading">Read Most <br>Frequent Questions</h3>
+                                <hr class="seperator-hr">
+                            </div>
+                            <div class="space-25"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ot-accordions">
+                                <% if(faq.faqQuestion.constructor === Array){ %> 
+                                <% for(let l=0; l<faq.faqQuestion.length; l++){ %>
+                                <div class="acc-item">
+                                    <span class="acc-toggle">Q.<%= faq.faqQuestion[l] %>
+                                        <i class="down flaticon-download-arrow"></i><i class="up flaticon-up-arrow"></i>
+                                    </span>
+                                    <div class="acc-content">
+                                        <span style="font-weight: bold;">Ans:</span>  <%- faq.faqAnswer[l] %>
+                                    </div>
+                                </div>
+                                <% } %>
+                                <% }else{ %>
+                                    <div class="acc-item">
+                                    <span class="acc-toggle">Q.<%= faq.faqQuestion %>
+                                        <i class="down flaticon-download-arrow"></i><i class="up flaticon-up-arrow"></i>
+                                    </span>
+                                    <div class="acc-content">
+                                        <span style="font-weight: bold;">Ans:</span>  <%- faq.faqAnswer %>
+                                    </div>
+                                </div>
+                                    <% } %>  
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <% } %>
+
+        </div>
+
+
+        <%- include("partials/footer")  %>
+    </div><!-- #page -->
+    <a id="back-to-top" href="#" class="show"><i class="flaticon-up-arrow"></i></a>
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/easypiechart.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/header-mobile.js"></script>
+    <script src="/js/royal_preloader.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        window.jQuery = window.$ = jQuery;
+        (function ($) {
+            "use strict";
+            //Preloader
+            Royal_Preloader.config({
+                mode: 'logo',
+                logo: '/images/2d-pnd.png',
+                logo_size: [250, 75],
+                showProgress: false,
+                showPercentage: false,
+                text_colour: '#000000',
+                background: '#ffffff'
+            });
+        })(jQuery);
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $("#callbackButton").click(function (e) {
+            e.preventDefault();
+            // console.log(`slug:$("callbackSlug").val()`)
+            let data = { full_name: $("#callbackFull_name").val(), email: $("#callbackEmail").val(), mobile: $("#callbackMobile").val(),slug:$("#callbackSlug").val() };
+            console.log(data)
+            $.ajax({
+                type: "POST",
+                url: "/callback",
+                data: data,
+                success: function (data) {
+                    console.log(data)
+                    if (data === "Unsuccessfull, please fill all the fields!") {
+                        window.alert(data);
+                    } else {
+                        window.alert(data);
+                        $("#callbackFull_name").val("");
+                        $("#callbackEmail").val("");
+                        $("#callbackMobile").val("");
+                       
+                    }
+
+                }
+            })
+        })
+        $("#requirements-list").find("*").attr("target", "_blank")
+
+    </script>
+</body>
+
+</html>

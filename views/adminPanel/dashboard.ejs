@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Including head files from the partials -->
+<%- include("partials/head.ejs") %>
+<style>
+  .alert {
+    position: absolute;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    top: 100px;
+  }
+
+  .alert button {
+    top: 0 !important;
+  }
+
+  .panel-data {
+    position: relative;
+  }
+</style>
+
+<body class="panel-data">
+  <!-- Including navbar and sidebar from the partials -->
+  <%- include("partials/navbar_sidebar.ejs") %>
+  <% if(passedMessage){ %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Done!</strong> <%= passedMessage %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% } %>
+  <div class="pg-tp">
+    <i class="ion-cube"></i>
+    <div class="pr-tp-inr">
+      <h4><strong>Rapport</strong> Admin Panel</h4>
+      <span>Admin Panel to control the workflow!</span>
+    </div>
+  </div><!-- Page Top -->
+
+  <div class="panel-content">
+    <div class="filter-items">
+      <div class="row grid-wrap mrg20">
+        <div class="col-md-6 grid-item col-sm-12 col-lg-12">
+          <div class="row mrg20">
+            <div class="col-md-6 col-sm-6 col-lg-6">
+              <div class="stat-box widget bg-clr5 style2">
+                <div class="wdgt-ldr">
+                  <div class="ball-scale-multiple">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <i class="ion-cube"></i>
+                <div class="stat-box-innr">
+                  <span> <i class="counter"> <%= customers.length %> </i></span>
+                  <h5>Total Customers Registered</h5>
+                </div>
+
+              </div>
+            </div>
+            <div onclick="location.href='/admin/taskDistribution';" style="cursor: pointer;" class="col-md-6 col-sm-6 col-lg-6">
+              <div class="stat-box widget bg-clr6 style2">
+
+                <div class="wdgt-ldr">
+                  <div class="ball-scale-multiple">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <i class="ion-bag"></i>
+                
+                <div  class="stat-box-innr">
+                  <span><i class="counter"> <%= orders.length %> </i></span>
+                  <h5>Total Orders/Service request</h5>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-12 grid-item col-sm-12 col-lg-12">
+
+          <div class="widget prd-wdgt pad50-40">
+            <h3>Employees Table</h3>
+            <div class="wdgt-ldr">
+              <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table style2 style3">
+                <thead class="table-inverse">
+                  <th><span>First Name</span></th>
+                  <th><span>Last Name</span></th>
+                  <th><span>Contact Number</span></th>
+                  <th><span>Email</span></th>
+                </thead>
+                <tbody>
+                  <% employees.forEach(function(e){ %>
+                  <tr>
+                    <td>
+                      <h4><a href="#" title=""><%= e.first_name %> </a></h4>
+                    </td>
+                    <td><span><%= e.last_name %> </span></td>
+                    <td><span><%= e.contact_number %> </span></td>
+                    <td><span><%= e.username %> </span></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 grid-item col-sm-12 col-lg-12">
+
+          <div class="widget prd-wdgt pad50-40">
+            <h3>Customers Table</h3>
+            <div class="wdgt-ldr">
+              <div class="ball-scale-multiple">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="table style2 style3">
+                <thead class="table-inverse">
+
+                  <th><span>First Name</span></th>
+                  <th><span>Last Name</span></th>
+                  <th><span>Contact Number</span></th>
+                  <th><span>Email</span></th>
+                  <th><span>Registration Date</span></th>
+
+
+                </thead>
+                <tbody>
+                  <% customers.forEach(function(f){ %>
+
+                  <tr>
+                    <td>
+                      <h4><a href="#" title=""><%= f.first_name %> </a></h4>
+                    </td>
+                    <td><span><%= f.last_name %> </span></td>
+                    <td><span><%= f.contact_number %> </span></td>
+                    <td><span><%= f.username %> </span></td>
+                    <td><span><%=new Date(f.date).toJSON().slice(0,10).split('-').reverse().join('/') %> </span></td>
+
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- Filter Items -->
+    </div>
+  </div><!-- Panel Content -->
+
+  <%- include("partials/footerJs.ejs") %>
+</body>
+
+</html>

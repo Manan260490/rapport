@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+     <%- include("partials/analyticsCodes") %>
+
+    <Title> <%= typeof seoData !== "undefined"? seoData.titleTag: "Rapport HR Solutions - Technology driven HR & PF ESI Consultant"%>  </title>    <meta property="og:image" content="/images/favicon.png" />
+
+    <Meta Name = "description" content =" <%= typeof seoData !== "undefined"? seoData.descriptionTag:"Rapport is the best enabling partner for your compliance with law. We offer PF ESI Consultancy Services, HR Consltancy, Business Licenesing, Company Registration and entire gamut of labour laws solutions that enable the corporate partners to focus on their core business while ensuring them to be law abiding entities." %>">
+    <meta name="google-site-verification" content="rBMaKbxi_qtywiASAsyRaFfnmC6gBA2S7bB7if9ysYM" />
+    <link rel="canonical" href="https://rapporthr.in/aboutUs">
+    <meta property="og:image" content="/images/favicon.png" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186349567-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-186349567-1');
+</script>    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/owl.theme.css" />
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/royal-preload.css" />
+    <!-- REVOLUTION SLIDER CSS -->
+    <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/settings.css">
+    <!-- REVOLUTION NAVIGATION STYLE -->
+    <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/navigation.css">
+    <!-- styles for vertical tabs -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        .nav-pills-custom .nav-link {
+            color: #aaa;
+            background: #fff;
+            position: relative;
+        }
+
+        .nav-pills-custom .nav-link.active {
+            color: #45b649;
+            background: #fff;
+        }
+
+
+        /* Add indicator arrow for the active tab */
+        @media (min-width: 992px) {
+            .nav-pills-custom .nav-link::before {
+                content: '';
+                display: block;
+                border-top: 8px solid transparent;
+                border-left: 10px solid #fff;
+                border-bottom: 8px solid transparent;
+                position: absolute;
+                top: 50%;
+                right: -10px;
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+        }
+
+        .nav-pills-custom .nav-link.active::before {
+            opacity: 1;
+        }
+
+        .customSearch {
+            text-align: center;
+            width: 100%;
+        }
+
+        .customSearch input {
+            width: 60%;
+            border-radius: 30px;
+            padding: 10px 20px;
+            margin-top: 50px;
+            transition: box-shadow 0.3s;
+            box-shadow: 0 0 20px rgb(121, 60, 60);
+
+        }
+
+        .question-input {
+            background-color: rgba(255, 255, 255, 0.548) !important;
+        }
+
+        .customSearch input:focus {
+            box-shadow: 0 0px 20px black;
+        }
+
+        .favourate-button {
+            z-index: 999;
+            border-radius: 30px;
+            margin: 10px 2px;
+            background-color: #082d45a6;
+        }
+
+        .favourate-button:hover {
+            background-color: #f05454;
+        }
+
+        .favourate-services {
+            text-align: center;
+            padding: 30px 0 30px;
+        }
+        @media (max-width:993PX) {
+            #about_contact{
+                margin-top: 40px;
+            }
+            .google_review_main{
+                margin-right: 0;
+            }
+        }
+        @media (max-width:532PX) {
+            #about_contact{
+                margin-top: 230px;
+            }
+            .google_review_main{
+                margin-right: 0;
+            }
+        }
+       
+         @media (max-width:360px) {
+            #about_contact{
+                margin-top: 250px;
+            }
+            .google_review_main{
+                margin-right: 0;
+            }
+        }
+         @media (max-width:350px) {
+            #about_contact{
+                margin-top: 400px;
+            }
+            .google_review_main{
+                margin-right: 0;
+            }
+        }
+         
+        .search-button {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .question-in-mind {
+            background-color: #f05454;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .question-form {
+            background-color: #f05454;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .question-submit {
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .ui-menu-item-wrapper,
+        .ui-menu-item,
+        .ui-menu {
+            border-radius: 30px;
+
+        }
+
+        #rev_slider_one_forcefullwidth {
+            background-image: linear-gradient(180deg, #3dbcd3, transparent);
+            height: 60vh !important;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        .ot-heading h2 {
+            line-height: 28px;
+        }
+
+        .checked {
+            color: orange !important;
+        }
+        .owl-stage{
+            display: flex;
+    align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/infinite-slider.css">
+    <!-- Newsletter styles -->
+    <style>
+        .container-fluid{
+            background-image: url(https://cdn.pixabay.com/photo/2017/05/31/23/44/email-marketing-2362038_960_720.png);
+        }
+
+        .rows {
+            height: 50vh;
+            
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            min-height: calc(1.5em + .75rem + 2px);
+            padding: .575rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 52px;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+        }
+
+        .card {
+            padding: 20px;
+            background-color: rgba(238, 238, 238, 0.678);
+            padding-bottom: 50px;
+            padding-top: 50px;
+            border: 0;
+            box-shadow: 5px 5px 10px rgb(119, 113, 113);
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #3DBCD3;
+            outline: 0;
+            box-shadow: none
+        }
+
+        .border-rad {
+            border-top-right-radius: 28px;
+            border-bottom-right-radius: 28px;
+            color: #fff;
+            background-color: #3DBCD3;
+            border-color: #3DBCD3
+        }
+
+        .border-rad:hover {
+            background-color:#3DBCD3;
+            border-color: #3DBCD3
+        }
+        @media(max-width: 992px){
+            .mx-5{
+                margin: 0 !important;
+            }
+            .card{
+                
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <!-- slider styles -->
+    <style>
+        .slick-slider .slick-track, .slick-slider .slick-list{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body onload='servicesSerach()' class="royal_preloader">
+    <div id="page" class="site">
+        <%- include("./partials/navbar") %>
+
+        <div id="content" class="site-content">
+
+            <div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase"
+                data-source="gallery">
+                <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+                <div id="rev_slider_one" class="rev_slider fullscreenbanner" data-version="5.4.1">
+                    <div class="search-div" style="position: relative; padding:30px 0 30px 0; z-index:99999">
+                        <form method="POST" action="/servicesSearch" class="customSearch">
+                            <input name="serviceSearch" id="serviceSearch" type="text"
+                                placeholder="Search any Service...">
+                            <button type="submit" class="btn search-button"><i class="fas fa-search"></i></button>
+
+                        </form>
+                        <div class="favourate-services container">
+                            <h1 style="color: white;font-size: 1.8rem;"><%= typeof seoData !== "undefined"? seoData.h1tag:"" %> </h1>
+
+                            <a href="<%= latestFavourat.favourates.slug_service[0] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[0] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[1] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[1] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[2] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[2] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[3] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[3] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[4] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[4] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[5] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[5] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[6] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[6] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[7] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[7] %></a>
+                            <a href="<%= latestFavourat.favourates.slug_service[8] %>"
+                                class="octf-btn octf-btn-primary favourate-button"><%= latestFavourat.favourates.nameOfService[8] %></a>
+                            <div style="padding: 10px;" class="row google_review_main">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div style="text-align: center;">
+                                        <div class="google-rating"> <a href="https://www.google.com/search?q=rapport+hr+solutions&oq=rapport+hr+solutions&aqs=chrome..69i57j46i175i199j69i57.5359j0j7&sourceid=chrome&ie=UTF-8#lrd=0x390ce35425555555:0x8d97198f68bc2a11,1,,,"><img style="width:50px" src="images/googleLogo.png"
+                                                alt="app rating"></a><span class="ml-2"><small>4.5
+                                                    of 5</small></span><span class="ml-2"><i class="fa fa-star checked"></i><i
+                                                    class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i
+                                                    class="fas fa-star-half-alt checked"></i></span>
+                                        </div>
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <ul>
+
+                        <!-- SLIDE 1 -->
+                        <li data-index="rs-70" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                            data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                            data-masterspeed="300" data-thumb="https://via.placeholder.com/1920x810.png" data-rotate="0"
+                            data-saveperformance="off" data-title="" data-param1="1" data-param2="" data-param3=""
+                            data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9=""
+                            data-param10="" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="" data-bgcolor='rgba(255,255,255,0)' alt="" data-bgposition="50% 50%"
+                                data-bgfit="center" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg"
+                                data-no-retina>
+                            <!-- LAYER 3  Thin text title-->
+                            <!-- LAYER 1  right image overlay dark-->
+                        </li>
+                    </ul>   
+                </div>
+            </div>
+            <section id="about_contact" class="over-hidden">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12 align-self-center">
+                            <div class="ot-heading">
+                                <span>About company</span>
+                              
+                            </div>
+                            <p class="mb-15">Rapport is the best enabling partner for your compliance with law. We offer Statutory Compliance Service related to labour laws that enable the corporate partners to focus on their core business while ensuring them to be law abiding entities.... <a
+                                    href="/aboutUs">Read More</a></p>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="icon-box-s1">
+                                        <div class="icon-main"><span class="flaticon-medal"></span></div>
+                                        <h5>Experience</h5>
+                                        <div class="line-box"></div>
+                                        <p>Managed by a team of professionals with over 10 years of practical experience
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="icon-box-s1">
+                                        <div class="icon-main"><span class="flaticon-gear"></span></div>
+                                        <h5>Quick Support</h5>
+                                        <div class="line-box"></div>
+                                        <p>24/7 Customer Support to Assist You Pan India</p>
+                                    </div>
+                                </div>
+                                <div class="space-15"></div>
+                            </div>
+                        </div>
+                        <div class="offset-lg-1 col-lg-6 col-md-12 align-self-center">
+                            <div class="about-right">
+
+                                <form action="/customerMessage" method="post" class="wpcf7">
+                                    <div class="main-form">
+
+                                        <h2>Question In Mind?</h2>
+                                        <p class="font14">Required fields are
+                                            marked *
+                                        </p>
+                                        <p>
+                                            <input required type="text" id="question_name" name="name"
+                                                placeholder="Enter the name *">
+                                        </p>
+                                        <p>
+                                            <input type="text" id="question_comapny" name="comapnyName"
+                                                placeholder="Company Name">
+                                        </p>
+                                        <p>
+                                            <input required id="question_email" type="email" name="email"
+                                                placeholder="email *">
+                                        </p>
+                                        <p>
+                                            <input type="number" id="question_mobile" name="customerNumber" required
+                                                placeholder="Mobile *">
+                                        </p>
+                                        <p>
+                                            <input required id="question_enquiry" type="text" name="enquiryFor"
+                                                placeholder="Enquiry For? *">
+                                        </p>
+                                        <button id="question-submit" class="octf-btn octf-btn-light">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-dark-primary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="ot-heading">
+                                <span class="text-primary-light">Why choose us</span>
+                                <h2 class="main-heading text-white">The pursuit of exceptional personnel and utmost
+                                    Customer Satisfaction is a strength we treasure and a tradition that we
+                                    strive to nurture and maintain.
+                                </h2>
+                            </div>
+                            <div class="space-20"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="serv-box-2 s2">
+                                <span class="big-number">01</span>
+                                <div class="icon-main"><span class="flaticon-tablet"></span></div>
+                                <div class="content-box">
+                                    <h5>Tech Driven Platform
+                                    </h5>
+                                    <div>Technology driven online service delivery when and where you need it. A team of
+                                        industry experts to assure you of
+                                        integrity and authenticity of checks. No Spam. No Sharing. 100% Confidentiality.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="serv-box-2 s2">
+                                <span class="big-number">02</span>
+                                <div class="icon-main"> <span class="flaticon-ui"></span></div>
+                                <div class="content-box">
+                                    <h5>Best Practices</h5>
+                                    <div>You have outsourced your work to us, we don’t outsource it further!
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="serv-box-2 s2">
+                                <span class="big-number">03</span>
+                                <div class="icon-main"><span class="flaticon-report"></span></div>
+                                <div class="content-box">
+                                    <h5>On Time Delivery
+                                    </h5>
+                                    <div>We know that on-time delivery is one of the most important things to consider
+                                        when dealing in legal matters. That's why
+                                        we go the extra mile to meet our delivery time commitments to you.
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                            <div class="serv-box-2 s2">
+                                <span class="big-number">04</span>
+                                <div class="icon-main"><span class="flaticon-shield"></span></div>
+                                <div class="content-box">
+                                    <h5>Real Time Updates</h5>
+                                    <div>Get Real Time Updates of your service request with our Cloud Solution.
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pt-0 ">
+                <div class="container">
+                    <div class="row mt--130">
+                        <div class="col-md-6 col-sm-12 mb-4 mb-md-0">
+                            <div class="misc-box text-white misc-box-bg1">
+                                <div class="ot-counter">
+                                    <div>
+                                        <span class="num" data-to="100" data-time="2000">0</span>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                                <h5>Money back guarantee</h5>
+                                <p>100% Money back guarantee if not satisfied.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="misc-box misc-box-bg2">
+                                <div class="ot-counter">
+                                    <div>
+                                        <span class="num" data-to="4" data-time="2000">0</span>
+                                        <span>k+</span>
+                                    </div>
+                                </div>
+                                <h5>Happy Customers</h5>
+                                <p>Served over 4000+ clients and still counting, with the highest percentage of repeat
+                                    and regular clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-120"></div>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 mb-4 mb-sm-0">
+                            <div class="ot-heading mb-0">
+                                <span >Our service</span>
+                                <h2 class="main-heading">We Offer a Wide <br>Variety of Services</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="space-55"></div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- Tabs nav -->
+                            <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
+                                aria-orientation="vertical">
+                                <a class="nav-link mb-3  shadow active" id="v-pills-messages-tab" data-toggle="pill"
+                                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
+                                    aria-selected="false">
+
+                                    <span class="font-weight-bold small text-uppercase">Labour Law
+                                        Compliances</span></a>
+                                <a class="nav-link mb-3  shadow " id="v-pills-home-tab" data-toggle="pill"
+                                    href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+
+                                    <span class="font-weight-bold small text-uppercase">Start a Business</span></a>
+
+                                <a class="nav-link mb-3  shadow" id="v-pills-profile-tab" data-toggle="pill"
+                                    href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                                    aria-selected="false">
+
+                                    <span class="font-weight-bold small text-uppercase">Licenses/
+                                        Registration:</span></a>
+
+
+
+                                <a class="nav-link mb-3  shadow" id="v-pills-settings-tab" data-toggle="pill"
+                                    href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                                    aria-selected="false">
+
+                                    <span class="font-weight-bold small text-uppercase">Human Resources & Technology</span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <!-- Tabs content -->
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade shadow rounded bg-white  p-5" id="v-pills-home"
+                                    role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                    <h4 class="font-italic mb-4">Start a Business</h4>
+                                    <% startAbusiness.forEach(function(e){ %>
+                                    <a class="nav-link mb-3  shadow active" href="/services/<%= e.slug  %> " role="tab">
+                                        <i class="fa fa-user-circle-o mr-2"></i>
+                                        <span class="font-weight-bold small text-uppercase"><%= e.name %></span>
+                                    </a>
+                                    <% }) %>
+
+                                </div>
+
+                                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile"
+                                    role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4 class="font-italic mb-4">Licenses/ Registration:</h4>
+                                    <% licenses.forEach(function(e){ %>
+
+                                    <a class="nav-link mb-3  shadow active" href="/services/<%= e.slug  %> " role="tab">
+                                        <i class="fa fa-user-circle-o mr-2"></i>
+                                        <span class="font-weight-bold small text-uppercase"><%= e.name %></span>
+                                    </a>
+                                    <% }) %>
+
+
+                                </div>
+
+                                <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-messages"
+                                    role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                    <h4 class="font-italic mb-4">Labour Law
+                                        Compliances</h4>
+                                    <% labour.forEach(function(e){ %>
+
+                                    <a class="nav-link mb-3  shadow active" href="/services/<%= e.slug  %> " role="tab">
+                                        <i class="fa fa-user-circle-o mr-2"></i>
+                                        <span class="font-weight-bold small text-uppercase"><%= e.name %></span>
+                                    </a>
+                                    <% }) %>
+
+
+                                </div>
+
+                                <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-settings"
+                                    role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                    <h4 class="font-italic mb-4">Human Resources &
+                                        Technology</h4>
+                                    <% HR.forEach(function(e){ %>
+
+                                    <a class="nav-link mb-3  shadow active" href="/services/<%= e.slug  %> " role="tab">
+                                        <i class="fa fa-user-circle-o mr-2"></i>
+                                        <span class="font-weight-bold small text-uppercase"><%= e.name %></span>
+                                    </a>
+                                    <% }) %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+           
+            <section class="elements-clients">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> OUR VALUABLE CLIENTS</h2>
+                            <div class="space-20"></div>
+                        </div>
+                    </div>
+                    <section class="customer-logos slider">
+                        <% clientIcons.forEach(function(e){ %> 
+                        <div class="slide"><img src="/uploads/<%= e.filename %>" alt="<%= e.filename %>"></div>
+                        <% }) %> 
+                    </section>
+                </div>
+            </section>
+            <section style="background-color: rgb(236, 233, 233);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="ot-heading text-center">
+                                <span>Customer Reviews</span>
+                                <h2 class="main-heading">We are Trusted </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-35"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="ot-testimonials">
+                                <div class="owl-carousel owl-theme testimonial-inner ot-testimonials-slider">
+                                    <% clientRating.forEach(function(e){ %>
+                                    <div class="testi-item">
+                                        <div class="layer1"></div>
+                                        <div class="layer2">
+                                            <div class="rating">
+                                                <img style="width:38px; display:inline; padding:5px 5px;"
+                                                    src="images/googleLogo.png" alt="app rating">
+                                                <span
+                                                    class="fa fa-star <%= 1 <=  Number(e.rating) && "checked" %>  "></span>
+                                                <span
+                                                    class="fa fa-star <%= 2 <=  Number(e.rating) && "checked" %>"></span>
+                                                <span
+                                                    class="fa fa-star <%= 3 <=  Number(e.rating) && "checked" %>"></span>
+                                                <span
+                                                    class="fa fa-star <%= 4 <=  Number(e.rating) && "checked" %>"></span>
+                                                <span
+                                                    class="fa fa-star <%= 5 <=  Number(e.rating) && "checked" %>"></span>
+
+                                            </div>
+                                            <div class="t-head flex-middle">
+
+
+                                                <div style="margin-top: 10px;" class="tinfo">
+                                                    <h6><%= e.clientName %> </h6>
+
+                                                </div>
+                                            </div>
+                                            <div style="margin-bottom: 10px;" class="ttext">
+                                                <%= e.description %>
+                                            </div>
+                                            <div class="link-a">
+                                                <a href="<%= e.link%> "> Link to the review </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- =============== Newsletter area ========================================= -->
+        <div class="container-fluid">
+            <form id="emailForm" action="/emailSubs" method="post">
+                <div style="height: 80vh;" class="row d-flex justify-content-center align-items-center rows ">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="text-center"> <img src="https://i.imgur.com/Dh7U4bp.png" width="200"> <span style="color:black" class="d-block mt-3"><span style="font-weight: bold;">STAY UPDATE WITH US</span>
+                                    <br> Get helpful information from our newsletter!</span>
+                                <div class="mx-5">
+                                    <div class="input-group mb-3 mt-4"> 
+                                        <input id="emailSubs" type="email" class="form-control" name="emailSubs" placeholder="Enter email" aria-label="Recipient's username" aria-describedby="button-addon2"> 
+                                        <button type="submit" class="btn btn-success border-rad" id="button-addon2">Subscribe</button> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <%- include("partials/footer") %>
+        <!-- #site-footer -->
+    </div><!-- #page -->
+    <a id="back-to-top" href="#" class="show"><i class="flaticon-up-arrow"></i></a>
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/easypiechart.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/header-mobile.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- REVOLUTION JS FILES -->
+
+    <script src="plugins/revolution/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script src="plugins/revolution/revolution/js/extensions/revolution-plugin.js"></script>
+
+    <!-- REVOLUTION SLIDER SCRIPT FILES -->
+    <script src="/js/rev-script-2.js"></script>
+    <script src="/js/royal_preloader.min.js"></script>
+    <script>
+        window.jQuery = window.$ = jQuery;
+        (function ($) {
+            "use strict";
+            //Preloader
+            Royal_Preloader.config({
+                mode: 'logo',
+                logo: '/images/2d-pnd.png',
+                logo_size: [250, 75],
+                showProgress: false,
+                showPercentage: true,
+                text_colour: '#000000',
+                background: '#ffffff'
+            });
+        })(jQuery);
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        function servicesSerach() {
+            $.post("/allServices", function (data) {
+                let searchArray = [];
+                let servicesObjects = JSON.parse(data)
+                servicesObjects.forEach(function (a) {
+                    searchArray.push(a.name);
+                });
+                $("#serviceSearch").autocomplete({
+                    source: searchArray
+                });
+            })
+
+        }
+
+    </script>
+    <script>
+        $("#question-submit").click(function (e) {
+            e.preventDefault();
+            let data = { name: $("#question_name").val(), comapnyName: $("#question_comapny").val(), email: $("#question_email").val(), customerNumber: $("#question_mobile").val(), enquiryFor: $("#question_enquiry").val() };
+            $.ajax({
+                type: "POST",
+                url: "/questionForm",
+                data: {data:JSON.stringify(data)} ,
+                success: function (data) {
+                    console.log(data)
+                    if (data === "Unsuccessfull, please fill all the fields!") {
+                        window.alert(data);
+                    } else {
+                        window.alert(data);
+                        $("#question_name").val("");
+                        $("#question_comapny").val("");
+                        $("#question_email").val("");
+                        $("#question_mobile").val("");
+                        $("#question_enquiry").val("")
+                    }
+
+                }
+            })
+        })
+
+    </script>
+    <script>
+        $("#emailForm").submit(function(e){
+            e.preventDefault();
+            var $form = $(this);
+            if($form.valid) return false;
+            $.ajax({
+                type: 'POST',
+                url: "/emailSubs",
+                data: {email:$("#emailSubs").val()},
+                dataType: "text",
+                success: function(data) {
+                    window.alert("registration successful!");
+                    $("#emailSubs").val("")
+                }
+            })
+        })
+    </script>
+
+    <!-- script for carousel -->
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script>
+        $(document).ready(function(){
+  $('.customer-logos').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 4
+      }
+    }, {
+      breakpoint: 520,
+      settings: {
+        slidesToShow: 3
+      }
+    }]
+  });
+});
+    </script>
+</body>
+
+</html>

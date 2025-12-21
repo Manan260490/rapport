@@ -1,0 +1,258 @@
+<style>
+    .contact_icons{
+        display: inline-block !important;
+        color: #1ABBD3 !important;
+       
+    }
+</style>
+<header id="site-header" class="site-header sticky-header header-static">
+    <!-- Main Header start -->
+    <div class="header-topbar style-2">
+        <div class="octf-area-wrap">
+            <div class="container">
+                <div class="row upper-nav">
+
+                    <div class="col-lg-12 topbar-icons-wrapper">
+                        <ul class="topbar-info align-self-end clearfix"
+                            style="background-color: #141d38;border-radius:0 0 0 30px; padding-left:200px">
+                            <li><a target="_blank" href="tel:9599553911"><i class="fas fa-phone-alt"></i>
+                                    9599553911</a></li>
+                            <li><a target="_blank" href="mailto:support@rapporthr.in"><i class="fas fa-envelope"></i>
+                                    support@rapporthr.in</a></li>
+                            <li><a target="_blank" href="https://twitter.com/epfosupport" target="_self"><i
+                                        class="fab fa-twitter"></i></a>
+                            </li>
+                            <li><a target="_blank" href="https://g.page/RapportHR" target="_self"><i
+                                        class="fab fa-google"></i></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.facebook.com/RapportHRSolution" target="_self"><i
+                                        class="fab fa-facebook"></i></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rapport-hr-solutions"
+                                    target="_self"><i class="fab fa-linkedin-in"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="octf-main-header  ">
+        <div class="octf-area-wrap">
+            <div class="octf-mainbar-container">
+                <div class="octf-mainbar">
+                    <div class="octf-mainbar-row octf-row ">
+                        <div>
+                            <div id="site-logo" class="site-logo">
+                                <a href="/">
+                                    <img src="/images/2d-pnd.png" alt="Rapport" class="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="octf-col menu-col">
+                            <nav id="site-navigation" class="main-navigation">
+                                <ul class="menu">
+                                    <li class="menu-item-has-children"><a href="#">Start a business</a>
+                                        <ul class="sub-menu">
+                                            <% startAbusiness.forEach(function(e){ %>
+                                            <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                            <% }) %>
+                                        </ul>
+
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Licenses/
+                                            Registration</a>
+                                        <ul class="sub-menu">
+                                            <% licenses.forEach(function(e){ %>
+                                            <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                            <% }) %>
+                                        </ul>
+
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Labour Law
+                                            Compliances</a>
+                                        <ul class="sub-menu">
+                                            <% labour.forEach(function(e){ %>
+                                            <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                            <% }) %>
+                                        </ul>
+
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Human Resources &
+                                            Technology</a>
+                                        <ul class="sub-menu">
+                                            <% HR.forEach(function(e){ %>
+                                            <li>
+                                                <a href="/services/<%= e.slug  %> "><%= e.name %>
+                                                </a>
+                                            </li>
+                                            <% }) %>
+
+                                        </ul>
+
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Knowledge Center</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/lawUpdates">Govt. Notifications/ Circulars</a></li>
+                                            <li><a href="/minimumWagesSelector">Minimum Wages</a></li>
+                                            <li><a href="/blog">Blogs</a></li>
+                                        </ul>
+                                    </li>
+                                    <% if(user){ %>
+                                    <li class="menu-item-has-children"><a href="/login/customer"><i
+                                                class="fas fa-user"></i></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/logout">Logout</a></li>
+                                            <li><a href="/customer/dashboard"> Dashboard </a></li>
+                                        </ul>
+                                    </li>
+                                    <% }else{ %>
+                                    <li><a href="/login/customer">Login</a></li>
+                                    <% } %>
+
+
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <% if(typeof service !== 'undefined'){ %>
+            <div class="octf-mainbar-container">
+                <div class="octf-mainbar">
+                    <div class="octf-mainbar-row octf-row ">
+                        <form id="callbackForm" class="wpcf7">
+                            <span>Request a call back:</span>
+                            <input required class="callback-input" type="text" id="callbackFull_name"
+                                placeholder=" * Enter full name">
+                            <input required class="callback-input" type="email" id="callbackEmail"
+                                placeholder=" * Enter email id">
+                            <input required class="callback-input" type="text" id="callbackMobile"
+                                placeholder=" * Enter mobile number">
+                            <button id="callbackButton" class="octf-btn octf-btn-dark"> Submit </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+
+        </div>
+    </div>
+
+    <div class="header_mobile">
+        <div class="container">
+            <div class="mlogo_wrapper clearfix">
+                <div class="mobile_logo">
+                    <a href="/">
+                        <img src="/images/2d-pnd.png" alt=" Rapport">
+                    </a>
+                </div>
+                <div id="mmenu_toggle">
+                    <button></button>
+                </div>
+            </div>
+            <div class="mmenu_wrapper">
+                <div class="mobile_nav collapse">
+                    <ul id="menu-main-menu" class="mobile_mainmenu">
+                        <li class="menu-item-has-children"><a href="#">Start a business</a>
+                            <ul class="sub-menu">
+                                <% startAbusiness.forEach(function(e){ %>
+                                <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Licenses/
+                                Registration</a>
+                            <ul class="sub-menu">
+                                <% licenses.forEach(function(e){ %>
+                                <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Labour Law
+                                Compliances</a>
+                            <ul class="sub-menu">
+                                <% labour.forEach(function(e){ %>
+                                <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Human Resources &
+                                Technology</a>
+                            <ul class="sub-menu">
+                                <% HR.forEach(function(e){ %>
+                                <li><a href="/services/<%= e.slug  %> "><%= e.name %> </a></li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children"><a href="#">Knowledge Center</a>
+                            <ul class="sub-menu">
+                               <li><a href="/lawUpdates">Govt. Notifications/ Circulars</a></li>
+                                    <li><a href="/minimumWagesSelector">Minimum Wages</a></li>
+                                    <li><a href="/blog">Blogs</a></li>
+                            </ul>
+                        </li>
+                       
+                       <% if(user){ %>
+                        <li class="menu-item-has-children"><a href="/login/customer"><i
+                                    class="fas fa-user"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="/logout">Logout</a></li>
+                                <li><a href="/customer/dashboard"> Dashboard </a></li>
+                            </ul>
+                        </li>
+                        <% }else{ %>
+                        <li><a href="/login/customer">Login</a></li>
+                        <% } %>
+                         <li style="text-align: center;"><a class="contact_icons" style="margin-right: 10px;" href="mailto:support@rapporthr.in"><i class="fas fa-envelope"></i></a> <a style="margin-left: 10px;" class="contact_icons" href="tel:9599553911"><i class="fas fa-phone"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<style>
+    .navbar {
+        z-index: 99;
+        overflow: hidden;
+        background: #fff;
+        border-top: 1px solid #eae7e7;
+        position: fixed !important;
+        bottom: 0;
+        width: 100%;
+    }
+    .navbar {
+        background: #fafafa!important;
+        z-index: 99999!important;
+    }
+    .navbar {
+        margin-bottom: 0;
+    }
+    .navbar {
+        position: relative;
+        min-height: 50px;
+        margin-bottom: 0 !important;
+        border: 1px solid transparent;
+    }
+    @media only screen and (min-width: 600px) {
+        .quick-contact{
+            display: none;
+        }
+    }
+    
+</style>
+<div class="navbar quick-contact" style="margin:-10px 0px;">
+	<div class="col-xs-4">
+		<a href="/"><i class="fa fa-home" style="font-size: 25px;color: #1ABBD3;"></i></a>
+	</div>
+	<div class="col-xs-4">
+		<a href="tel:9599553911"><i class="fa fa-phone-alt" style="font-size: 25px;color: #1ABBD3;"></i></a>
+	</div>
+	<div class="col-xs-4">
+		<a href="https://api.whatsapp.com/send?phone=+919599553911&amp;text=Hello RapportHRSolution"><i class="fab fa-whatsapp" style="font-size: 25px;color: #1ABBD3;"></i></a>
+	</div>
+	
+</div>
+

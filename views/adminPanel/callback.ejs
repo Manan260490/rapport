@@ -53,6 +53,8 @@
 
     td {
         text-align: center;
+        max-width: 150px; 
+    word-wrap: break-word;
     }
 
     .alert-container {
@@ -117,17 +119,26 @@
                     <th>
                         <span>Email</span>
                     </th>
+                    <th>Slug</th>
                     <th>
                         Date
                     </th>
                     <th>Status</th>
+                    
                     <th>Update Status</th>
                     <th>Delete</th>
+                  
                 </tr>
             </thead>
             <tbody>
                 <form action="/admin/callback" method="post">
                     <div class="form-group">
+                        <%
+callData.sort(function(a, b) {
+    return new Date(b.timeStamp) - new Date(a.timeStamp);
+});
+%>
+
                         <% callData.forEach(function(d){ %>
 
                         <tr>
@@ -139,11 +150,13 @@
                             <td>
                                 <a class="" href="mailto:<%=d.email%>"><%= d.email %> </>
                             </td>
+                            <td><%= d.slug %> </td>
                             <td>
                                 <%= String(d.timeStamp).substring(0,16) %>
                             </td>
 
                             <td><%= d.status %> </td>
+                           
 
                             <td><button value="<%= d.id %>" name="CallDoneButton" class="btn btn-success">Call
                                     Done</button></td>

@@ -31,6 +31,29 @@
     width: 35px;
     height: 35px;
 }
+.call_float {
+    position: fixed;
+    bottom: 170px;
+    right: 20px;
+    background-color: #2890a7;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: none; /* hidden by default */
+}
+
+/* Show only on mobile screens */
+@media (max-width: 768px) {
+    .call_float {
+        display: block;
+    }
+}
+
 </style>
 <footer id="site-footer" class="site-footer footer-v1">
     <div class="container">
@@ -148,7 +171,10 @@
                 <p class="copyright-text">Copyright ©️ 2020 Rapport HR Solutions. All Rights Reserved.</p>
             </div>
         </div>
-        <a href="https://wa.me/919876543210" 
+        <a href="tel:+919599553911" title="Call Now" class="call_float">
+            📞 
+        </a>
+        <a href="https://wa.me/919599553911" 
    class="whatsapp_float" 
    target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"

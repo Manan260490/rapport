@@ -55,8 +55,9 @@
                         <div class="octf-col menu-col">
                             <% function renderMenu(menuList) { %>
                                 <% menuList.forEach(menu => { %>
+                                    <% if (!menu.isDisabled) { %> 
                                     <li class="<%= menu.children.length ? 'menu-item-has-children' : '' %>">
-                                        <a href="<%= menu.link %>"><%= menu.title %></a>
+                                        <a href="<%= menu.link %>"><%= menu.title %> <%= menu.isDisabled %></a>
                             
                                         <% if (menu.children && menu.children.length) { %>
                                             <ul class="sub-menu">
@@ -64,6 +65,7 @@
                                             </ul>
                                         <% } %>
                                     </li>
+                                    <% } %>
                                 <% }) %>
                             <% } %>
                             

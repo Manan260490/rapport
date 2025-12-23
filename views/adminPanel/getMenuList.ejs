@@ -80,7 +80,7 @@ window.allMenus = menus;
               </td>
               <td>
                 <button class="btn btn-sm btn-warning" onclick="toggleEditForm('${menu._id}')">Edit</button>
-                <button class="btn btn-sm btn-danger" onclick="deleteMenu('${menu._id}')">Delete</button>
+               <!--  <button class="btn btn-sm btn-danger" onclick="deleteMenu('${menu._id}')">Delete</button>   -->
                 <button class="btn btn-sm btn-secondary" onclick="toggleMenu('${menu._id}')">
                   ${menu.isDisabled ? 'Enable' : 'Disable'}
                 </button>
@@ -169,7 +169,7 @@ window.allMenus = menus;
         fetch(`/admin/toggleMenu/${id}`, { method: "POST" })
           .then(res => res.ok ? res.text() : Promise.reject("Failed"))
           .then(() => {
-            alert("Menu status toggled");
+            alert("Menu disabled");
             location.reload();
           })
           .catch(err => alert(err));

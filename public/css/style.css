@@ -1506,7 +1506,8 @@ a:active {
     position: absolute;
     content: "";
     font-family: Flaticon;
-    top: 50%;
+    /* top: 50%; */
+    top: 20%;
     right: 0;
     margin-top: -5px;
     font-size: 9px;
